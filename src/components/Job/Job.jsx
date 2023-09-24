@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { MdLocationOn } from 'react-icons/md';
 import { AiOutlineDollar } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const Job = ({ job }) => {
   const {
     logo,
+    id,
     job_title,
     company_name,
     remote_or_onsite,
@@ -13,7 +15,7 @@ const Job = ({ job }) => {
     salary,
   } = job || {};
   return (
-    <div className="card card-compact w-96 bg-base-100 shadow-xl">
+    <div className="card card-compact py-6 bg-base-100 shadow-xl hover:shadow-[#10171e] hover:shadow-2xl hover:delay-75">
       <figure>
         <img src={logo} alt="Logo" />
       </figure>
@@ -35,13 +37,15 @@ const Job = ({ job }) => {
           </h2>
           <h2 className="flex items-center">
             <AiOutlineDollar className="text-2xl mr-2"></AiOutlineDollar>
-            {location}
+            Salary: {salary}
           </h2>
         </div>
         <div className="card-actions">
-          <button className="btn text-white bg-gradient-to-r from-cyan-500 to-blue-500">
-            View Details
-          </button>
+          <Link to={`/job/${id}`}>
+            <button className="btn text-white bg-gradient-to-r from-cyan-500 to-blue-500">
+              View Details
+            </button>
+          </Link>
         </div>
       </div>
     </div>

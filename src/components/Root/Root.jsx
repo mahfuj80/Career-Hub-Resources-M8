@@ -7,7 +7,9 @@ const Root = () => {
     <div>
       <div className="max-w-6xl mx-auto">
         <Header></Header>
-        <Outlet></Outlet>
+        <div className="  py-4 rounded-lg">
+          <Outlet></Outlet>
+        </div>
       </div>
       <Footer></Footer>
     </div>
