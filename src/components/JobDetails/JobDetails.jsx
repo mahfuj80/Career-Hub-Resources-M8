@@ -9,8 +9,7 @@ const JobDetails = () => {
   const job = jobs.find((job) => job.id === parseInt(id));
   const { job_title } = job;
   const handleApplyJob = () => {
-    console.log('j');
-    saveJobApplication(id);
+    saveJobApplication(parseInt(id));
     toast('You Have Applied Successfully');
   };
   return (
